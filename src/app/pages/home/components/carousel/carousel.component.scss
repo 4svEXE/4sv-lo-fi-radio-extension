@@ -1,0 +1,27 @@
+@use '../../../../shared/scss/variables.scss'as *;
+
+.slide-content {
+  padding: 20px;
+
+  @media (max-width: $media-tablet) {
+    padding: 2px;
+  }
+
+  img {
+    height: 200px;
+    width: auto;
+
+    @media (max-width: $media-tablet) {
+      height: auto;
+      width: 100%;
+    }
+  }
+}
+
+h3 {
+  padding-left: 20px;
+
+  @media (max-width: $media-tablet) {
+    padding-left: 2px;
+  }
+}

@@ -1,0 +1,80 @@
+.button {
+  border-radius: $border-radius;
+  padding: $spacing;
+  font-size: $font-size-p;
+  cursor: pointer;
+  transition: background-color 0.1s ease;
+  width: fit-content;
+
+  &.primory {
+    background-color: $primary-color;
+    color: $bg-color;
+    border: none;
+
+
+    &:hover {
+      background-color: darken($primary-color, 10%);
+    }
+  }
+
+  &.secondary {
+    background-color: $secondary-color;
+    color: $text-color;
+    border: none;
+
+    &:hover {
+      background-color: lighten($secondary-color, 10%);
+    }
+  }
+
+  &.outline {
+    background: none;
+    border: 1px solid $primary-color;
+    color: $primary-color;
+    outline: none;
+
+    &:hover {
+      background-color: $primary-color;
+      color: $bg-color;
+    }
+  }
+
+  &.link {
+    color: $text-color;
+    position: relative;
+    font-weight: 600;
+    font-size: 16px;
+    outline: none;
+    text-decoration: none;
+    padding: $spacing / 4 $spacing;
+
+    &::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 0%;
+      height: 2px;
+      border-radius: 1px;
+      transition: .2s width;
+      background: $text-color;
+    }
+
+    &:hover {
+      &::after {
+        width: 100%;
+      }
+    }
+
+    &.active {
+      &::after {
+        width: 100%;
+      }
+    }
+  }
+
+  &.disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+}
