@@ -3,13 +3,13 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
-    "build": "ng build",
+    "start": "ng serve --configuration=development",
+    "build": "ng build --configuration=production",
+    "deploy": "npm run build && npx angular-cli-ghpages --dir=dist/static",
     "watch": "ng build --watch --configuration development",
     "seo:build": "ng build && npx scully --scanRoutes --project 4sv-lo-fi-radio-extension",
     "seo:serve": "npm run seo:build && npx scully serve --project 4sv-lo-fi-radio-extension",
-    "test": "ng test",
-    "deploy": "npx angular-cli-ghpages --dir=dist/static"
+    "test": "ng test"
   },
   "private": true,
   "dependencies": {
